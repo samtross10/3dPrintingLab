@@ -6,116 +6,154 @@
   <title>3D Printing Lab</title>
   <link rel="icon" type="image/png" href="favicon.png">
   <style>
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background-color: #282828;
+      font-family: "Segoe UI", Arial, sans-serif;
       margin: 0;
+      color: #f5f5f5;
+      background: linear-gradient(-45deg, #1d1d1d, #232859, #5a1c6e, #1f6f75);
+      background-size: 400% 400%;
+      animation: gradientFlow 14s ease infinite;
     }
 
     .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 60px 20px;
       display: flex;
-      color: yellow;
       flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 20px;
-      box-sizing: border-box;
+      gap: 40px;
     }
 
     h1 {
-      margin-bottom: 20px;
-      font-size: 2rem;
+      text-align: center;
+      font-size: 3rem;
+      margin: 0;
+      color: #ffe08a;
+      text-shadow: 0 0 10px rgba(255,255,255,0.25);
     }
 
-    .section-title {
-      margin-top: 30px;
-      margin-bottom: 10px;
-      font-size: 1.4rem;
-      color: #ffdd55;
-      text-decoration: underline;
+    .card {
+      background: rgba(0,0,0,0.45);
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.8rem;
+      color: #ffe08a;
+      border-bottom: 2px solid rgba(255,255,255,0.15);
+      padding-bottom: 8px;
+      margin-bottom: 20px;
     }
 
     .button-group {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      max-width: 400px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 18px;
     }
 
-    .button, .diff_button {
-      font-weight: bold;
-      color: yellow;
-      padding: 12px 24px;
-      margin: 8px;
-      border: 2px solid black;
-      border-radius: 8px;
+    .button, .diff_button, .upload_button {
+      padding: 14px 20px;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border: none;
       cursor: pointer;
-      font-size: 1rem;
-      width: 90%;
-      max-width: 320px;
-      transition: 0.3s;
-      background-color: #303030;
+      transition: 0.25s;
     }
 
+    .button {
+      background-color: rgba(255,255,255,0.08);
+      color: #ffe08a;
+    }
     .button:hover {
-      background-color: #4F4F4F;
-      transform: scale(1.05);
+      background-color: rgba(255,255,255,0.15);
+      transform: translateY(-3px);
     }
 
     .diff_button {
-      background-color: #161616;
+      background-color: rgba(255,255,255,0.06);
+      color: #ffffff;
     }
-
     .diff_button:hover {
-      background-color: #262626;
-      transform: scale(1.05);
+      background-color: rgba(255,255,255,0.13);
+      transform: translateY(-3px);
     }
 
-    .info-box {
-      background-color: #1e1e1e;
-      border: 2px solid #444;
-      border-radius: 10px;
-      padding: 20px;
-      color: white;
-      margin-top: 30px;
-      max-width: 700px;
+    .upload_button {
+      background: linear-gradient(135deg, #ffb000, #ffcc33);
+      color: #000;
+      box-shadow: 0 0 18px rgba(255,204,51,0.8);
     }
-
-    ul {
-      text-align: left;
-      line-height: 1.6;
+    .upload_button:hover {
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 0 24px rgba(255,220,120,1);
     }
 
     @media (max-width: 600px) {
-      h1 { font-size: 1.6rem; }
-      .section-title { font-size: 1.2rem; }
+      h1 { font-size: 2.3rem; }
+      .card h2 { font-size: 1.5rem; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>3D Printing Lab Student Hub</h1>
+  <header style="background:#111; padding:20px 0; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.4);">
+    <h1 style="color:#ffcc4d; margin:0; font-size:2.2rem; letter-spacing:1px;">3D Printing Lab Hub</h1>
+  </header>
 
-    <!-- Printer Guides Section -->
-    <div class="section-title">Printer Guides</div>
-    <div class="button-group">
-      <button class="button" onclick="window.open('Ender_3_V2.pdf', '_blank')">Ender 3 V2</button>
-      <button class="button" onclick="window.open('placeholder.pdf', '_blank')">Ender 6</button>
-      <button class="button" onclick="window.open('placeholder.pdf', '_blank')">Guider 2S</button>
-      <button class="button" onclick="window.open('placeholder.pdf', '_blank')">Creator 2 Pro</button>
-      <button class="button" onclick="window.open('placeholder.pdf', '_blank')">Qidi X-Plus</button>
-    </div>
-    
-    <!-- Learning Resources Section -->
-    <div class="section-title">Resources & Tools</div>
-    <div class="button-group">
-      <button class="diff_button" onclick="window.open('placeholder.pdf', '_blank')">General Issues</button>
-      <button class="diff_button" onclick="window.open('3d_printing_tutorials.html', '_blank')">Tutorials</button>
-      <button class="diff_button" onclick="window.open('upload_portal.html', '_blank')">Upload Portal</button>
+  <div class="container" style="max-width:1100px; margin:auto; padding:30px 20px;">
+
+    <!-- Upload Portal Featured Card -->
+    <div style="background:#2a2a2a; border-radius:16px; padding:30px; margin-bottom:40px; box-shadow:0 0 25px rgba(255,180,0,0.35); text-align:center; border:2px solid #ffb000;">
+      <h2 style="color:#ffcc4d; margin-top:0; font-size:1.9rem;">Start a Print</h2>
+      <p style="color:#eee; max-width:700px; margin:auto; font-size:1.1rem;">Submit your STL or 3MF file to the lab for printing. Make sure it's sliced correctly and follows safety guidelines.</p>
+      <button class="upload_button" onclick="window.open('https://samtross10.github.io/3dPrintingPortal/', '_blank')" style="margin-top:20px; padding:16px 38px; font-size:1.2rem;">Go to Upload Portal</button>
     </div>
 
-    <p style="font-size: 12px; color: white; margin-top: 40px;">Last Updated: 11/19/2025</p>
+    <!-- Three-column layout -->
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:25px;">
+
+      <!-- Printer Guides Card -->
+      <div style="background:#1f1f1f; padding:25px; border-radius:14px; border:1px solid #333;">
+        <h2 style="color:#ffcc4d; font-size:1.5rem; margin-top:0;">Printer Guides</h2>
+        <p style="color:#ccc; font-size:0.95rem;">Quick reference sheets for every machine in the lab.</p>
+        <div style="display:flex; flex-direction:column; gap:10px; margin-top:15px;">
+          <button class="button" onclick="window.open('Ender_3_V2.pdf', '_blank')">Ender 3 V2</button>
+          <button class="button" onclick="window.open('placeholder.pdf', '_blank')">Ender 6</button>
+          <button class="button" onclick="window.open('placeholder.pdf', '_blank')">Guider 2S</button>
+          <button class="button" onclick="window.open('placeholder.pdf', '_blank')">Creator 2 Pro</button>
+          <button class="button" onclick="window.open('placeholder.pdf', '_blank')">Qidi X-Plus</button>
+        </div>
+      </div>
+
+      <!-- Tutorials Card -->
+      <div style="background:#1f1f1f; padding:25px; border-radius:14px; border:1px solid #333;">
+        <h2 style="color:#ffcc4d; font-size:1.5rem; margin-top:0;">Tutorials</h2>
+        <p style="color:#ccc; font-size:0.95rem;">Learn CAD, slicing, and troubleshooting—all in one place.</p>
+        <button class="diff_button" onclick="window.open('3d_printing_tutorials.html', '_blank')" style="margin-top:15px; width:100%;">Open Tutorial Library</button>
+      </div>
+
+      <!-- Troubleshooting Card -->
+      <div style="background:#1f1f1f; padding:25px; border-radius:14px; border:1px solid #333;">
+        <h2 style="color:#ffcc4d; font-size:1.5rem; margin-top:0;">Troubleshooting</h2>
+        <p style="color:#ccc; font-size:0.95rem;">Fix failed prints, calibration issues, and more.</p>
+        <button class="diff_button" onclick="window.open('placeholder.pdf', '_blank')" style="margin-top:15px; width:100%;">General Issues</button>
+      </div>
+
+    </div>
+
+    <p style="text-align:center; margin-top:50px; font-size:12px; color:#777;">Last Updated: 11/19/2025</p>
+
   </div>
 </body>
 </html>
