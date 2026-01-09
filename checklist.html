@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pre-Upload Design Checklist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #1c1c1c;
+      color: #f5f5f5;
+    }
+
+    header {
+      background: #111;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+
+    header h1 {
+      margin: 0;
+      color: #ffcc4d;
+      font-size: 2rem;
+      letter-spacing: 1px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+    }
+
+    .card {
+      background: #262626;
+      padding: 30px;
+      border-radius: 16px;
+      border: 1px solid #333;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.45);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      color: #ffcc4d;
+      border-bottom: 2px solid rgba(255,255,255,0.1);
+      padding-bottom: 8px;
+    }
+
+    p {
+      color: #ccc;
+      line-height: 1.6;
+    }
+
+    ul {
+      color: #ddd;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    .step {
+      font-weight: 600;
+      color: #ffe08a;
+    }
+
+    a {
+      color: #00b7ff;
+    }
+
+    .note {
+      background: #1f1f1f;
+      padding: 15px 20px;
+      border-radius: 12px;
+      border: 1px solid #333;
+      margin-top: 15px;
+      color: #bbb;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Pre-Upload Design Checklist</h1>
+</header>
+
+<div class="container">
+
+  <!-- Purpose -->
+  <div class="card">
+    <p>
+      Upload all files as <strong>.STL</strong>. Other file types <strong>will</strong> be ignored!
+    </p>
+
+    <p>
+      Your responsibility is to confirm that your <strong>design itself</strong>
+      is printable and free of major issues.
+    </p>
+
+    <p class="step">
+      👉 Use Kiri:Moto as a <em>design preview tool</em>:
+      <a href="https://grid.space/kiri/" target="_blank">https://grid.space/kiri/</a>
+    </p>
+
+    <p>
+      Need help with Kiri:Moto?
+      <a href="Tutorials/kirimoto-guide.html" target="_blank">Learn how to use it here</a>.
+    </p>
+  </div>
+
+  <!-- Step 1 -->
+  <div class="card">
+    <h2>1 — Load & Scale Check</h2>
+    <ul>
+      <li>Load your <strong>.STL</strong> into Kiri:Moto</li>
+      <li>The model should appear at a realistic size</li>
+      <li>If it looks tiny or massive, the scale is incorrect</li>
+      <li>Units should be in millimeters</li>
+    </ul>
+  </div>
+
+  <!-- Step 2 -->
+  <div class="card">
+    <h2>2 — Bed Fit & Orientation</h2>
+    <ul>
+      <li>The entire model must fit within the build area</li>
+      <li>No part of the model should extend past the bed</li>
+      <li>Model should rest flat on at least one surface</li>
+    </ul>
+
+    <div class="note">
+      You do NOT need to select a specific printer.
+    </div>
+  </div>
+
+  <!-- Step 3 -->
+  <div class="card">
+    <h2>3 — Geometry Red Flags</h2>
+    <ul>
+      <li><strong>Floating parts:</strong> Nothing should start in mid-air</li>
+      <li><strong>Extreme overhangs:</strong> Large floating horizontal surfaces with no support</li>
+      <li><strong>Thin walls:</strong> Fragile parts may not survive printing</li>
+      <li><strong>Tiny details:</strong> Smaller than a pencil tip often fail</li>
+    </ul>
+  </div>
+
+  <!-- Step 4 -->
+  <div class="card">
+    <h2>4 — Layer Preview (Visual Only)</h2>
+    <ul>
+      <li>Slice the model only to <em>preview</em> the layers</li>
+      <li>Scroll through the layers from bottom to top</li>
+      <li>Each layer should build on the one below it</li>
+      <li>If it looks wrong here, it will fail on the printers</li>
+    </ul>
+
+    <div class="note">
+      You are not responsible for slicer settings.
+      This preview is only to catch design mistakes.
+    </div>
+  </div>
+
+  <!-- Final -->
+  <div class="card">
+    <h2>Final Confirmation</h2>
+    <ul>
+      <li>✔ Model is properly scaled</li>
+      <li>✔ No floating or impossible geometry</li>
+      <li>✔ Fits within a standard printer bed</li>
+      <li>✔ Design matches intended use</li>
+    </ul>
+
+    <p class="step">
+      If everything looks correct, return to the
+      <a href="index.html" target="_blank">home page</a>
+      and upload your file.
+    </p>
+  </div>
+
+  <p class="footer-note">
+    Unsure about your design? Ask before uploading.
+    (<a href="mailto:196644@mcpsmd.net" target="_blank">196644@mcpsmd.net</a>)
+    <br>
+    Last updated: 12/19/2025
+  </p>
+
+</div>
+
+</body>
+</html>
